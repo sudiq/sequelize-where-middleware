@@ -1,1 +1,1 @@
-# sequelize-where-middleware
+# sqlize-query
