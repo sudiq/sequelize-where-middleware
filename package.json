@@ -1,0 +1,14 @@
+{
+  "name": "sqlize-query",
+  "version": "1.0.0",
+  "description": "Converts sequelize queries from query params to sequelize query object ",
+  "main": "sqlize.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sequelize": "^6.6.2"
+  }
+}
