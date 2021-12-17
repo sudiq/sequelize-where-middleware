@@ -14,9 +14,11 @@ const checkArray = (value) => {
 };
 
 function goDeeper(deepObject, key, res = {}) {
-  if (key in Op) {
-    key = Op[key];
+  if (key.indexOf('$') > -1) {
+    operator = key.substring(1);
+    key = Op[operator];
   }
+  
   if (typeof deepObject != "object" || checkArray(deepObject)) {
     return { [key]: deepObject };
   }
