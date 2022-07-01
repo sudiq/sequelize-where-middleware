@@ -13,10 +13,15 @@ const checkArray = (value) => {
   return true;
 };
 
-function goDeeper(deepObject, key, res = {}) {
-  if (key in Op) {
-    key = Op[key];
+function goDeeper(deepObject, key = '', res = {}) {
+  if (key.indexOf('$') > -1) {
+    operator = key.substring(1);
+    key = Op[operator];
   }
+
+  // if (key in Op) {
+  //   key = Op[key];
+  // }
   if (typeof deepObject != "object" || checkArray(deepObject)) {
     return { [key]: deepObject };
   }
@@ -34,7 +39,7 @@ exports.retrieveWhere = function (whereStr) {
   }
   try {
     const whereObj = JSON.parse(whereStr);
-    const result = goDeeper(whereObj, "where")["where"];
+    const result = goDeeper(whereObj, "where");
     return result;
   } catch (err) {
     if (err instanceof SyntaxError) {
