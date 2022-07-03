@@ -1,1 +1,1 @@
-declare function retrieveWhere(whereStr: string): Record;
+export declare function retrieveWhere(whereStr: string): Record;
