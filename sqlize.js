@@ -19,12 +19,10 @@ function goDeeper(deepObject, key = '', res = {}) {
     key = Op[operator];
   }
 
-  // if (key in Op) {
-  //   key = Op[key];
-  // }
   if (typeof deepObject != "object" || checkArray(deepObject)) {
     return { [key]: deepObject };
   }
+  
   let temp = {};
   for (let op in deepObject) {
     let newres = goDeeper(deepObject[op], op, res);
