@@ -1,0 +1,1 @@
+declare function retrieveWhere(whereStr: string): Record;
