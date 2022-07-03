@@ -18,7 +18,7 @@ function goDeeper(deepObject, key = '', res = {}) {
     operator = key.substring(1);
     key = Op[operator];
   }
-
+  
   if (typeof deepObject != "object" || checkArray(deepObject)) {
     return { [key]: deepObject };
   }
