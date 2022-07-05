@@ -13,7 +13,7 @@
 		"typescript"
 	],
   "license": "ISC",
-  "dependencies": {
+  "peerDependencies": {
     "sequelize": "^6.6.2"
   }
 }
