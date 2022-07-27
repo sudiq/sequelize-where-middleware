@@ -32,9 +32,10 @@ function goDeeper(deepObject, key = '', res = {}) {
 }
 
 exports.retrieveWhere = function (whereStr) {
-  if (typeof whereStr != "string") {
-    throw new Error("invalid input type");
+  if (!whereStr) {
+    return;
   }
+  
   try {
     const whereObj = JSON.parse(whereStr);
     const result = goDeeper(whereObj, "where");
