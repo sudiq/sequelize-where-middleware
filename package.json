@@ -1,17 +1,17 @@
 {
   "name": "sqlize-query",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Converts sequelize queries from query params to sequelize query object ",
   "main": "sqlize.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "sudiq/sqlize-query",
-	"keywords": [
-		"sequelize",
-		"sql",
-		"typescript"
-	],
+  "keywords": [
+    "sequelize",
+    "sql",
+    "typescript"
+  ],
   "license": "ISC",
   "peerDependencies": {
     "sequelize": "^6.6.2"
