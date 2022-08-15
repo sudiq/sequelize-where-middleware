@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
 
-function goDeeper(deepObject, key = '', options, res = {}) {
+function goDeeper(deepObject, key = '', options = {}, res = {}) {
   if (key.indexOf('$') > -1) {
     operator = key.substring(1);
     key = Op[operator];
@@ -9,7 +9,7 @@ function goDeeper(deepObject, key = '', options, res = {}) {
 
   const blacklist = [];
 
-  if (options) {
+  if (options.blacklist) {
     blacklist = options.blacklist || [];
   }
 
@@ -18,6 +18,10 @@ function goDeeper(deepObject, key = '', options, res = {}) {
   }
   
   if (Array.isArray(deepObject)) {
+    return { [key]: deepObject };
+  }
+
+  if (typeof deepObject === "string") {
     return { [key]: deepObject };
   }
   
