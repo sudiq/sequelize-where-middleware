@@ -7,9 +7,9 @@ function goDeeper(deepObject, key = '', options = {}, res = {}) {
     key = Op[operator];
   }
 
-  const blacklist = [];
+  let blacklist = [];
 
-  if (options.blacklist) {
+  if (Array.isArray(options.blacklist) && options.blacklist.length > 0) {
     blacklist = options.blacklist || [];
   }
 
