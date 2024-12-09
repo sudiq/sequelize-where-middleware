@@ -21,7 +21,7 @@ function goDeeper(deepObject, key = '', options = {}, res = {}) {
     return { [key]: deepObject };
   }
 
-  if (typeof deepObject === "string") {
+  if (typeof deepObject !== "object") {
     return { [key]: deepObject };
   }
   
